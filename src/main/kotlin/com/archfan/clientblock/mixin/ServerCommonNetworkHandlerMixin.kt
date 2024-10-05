@@ -24,7 +24,7 @@ abstract class ServerCommonNetworkHandlerMixin {
     @Shadow
     abstract fun disconnect(reason: Text)
 
-    @Inject(at = [At("HEAD")], method = ["onCustomPayload"])
+    @Inject(at = [At("HEAD")], method = ["onCustomPayload"], cancellable = true)
     private fun onCustomPayload(packet: CustomPayloadC2SPacket, info: CallbackInfo) {
         val payload = packet.payload()
 
@@ -40,8 +40,10 @@ abstract class ServerCommonNetworkHandlerMixin {
 
             LOGGER.info("Blocked ${this.getProfile().name} using client $brand")
 
-            if (shouldKick)
-                return this.disconnect(Text.of(kickMessage))
+            if (shouldKick) {
+                this.disconnect(Text.of(kickMessage))
+                info.cancel()
+            }
         }
     }
 }
