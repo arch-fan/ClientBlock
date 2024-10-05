@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory
 
 class ClientBlock : ModInitializer {
     companion object {
-        val LOGGER = LoggerFactory.getLogger("clientblock")
+        val LOGGER = LoggerFactory.getLogger("ClientBlock")
         val CONFIG = Config.loadFromFile(
             FabricLoader
                 .getInstance()
