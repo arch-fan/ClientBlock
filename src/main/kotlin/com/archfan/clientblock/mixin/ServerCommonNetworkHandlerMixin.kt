@@ -31,7 +31,12 @@ abstract class ServerCommonNetworkHandlerMixin {
 
         if(payload is BrandCustomPayload) {
             val brand = payload.brand()
-            val (action, clients, kickMessage) = CONFIG
+            val playerName = this.getProfile().name
+            val (action, clients, kickMessage, logger) = CONFIG
+
+            if (logger) {
+                LOGGER.info("Player $playerName connecting with client $brand")
+            }
 
             var shouldKick: Boolean = clients.contains(brand)
 
@@ -39,10 +44,10 @@ abstract class ServerCommonNetworkHandlerMixin {
                 shouldKick = !shouldKick
             }
 
-            LOGGER.info("Blocked ${this.getProfile().name} using client $brand")
 
             if (shouldKick) {
                 this.disconnect(Text.of(kickMessage))
+                LOGGER.info("Blocked $playerName using client $brand")
                 info.cancel()
             }
         }
