@@ -10,7 +10,8 @@ import kotlinx.serialization.encodeToString
 data class Config (
     val action: String = "block",
     val clients: List<String> = emptyList(),
-    val kickMessage: String = "The client is not allowed!"
+    val kickMessage: String = "The client is not allowed!",
+    val logger: Boolean = false
 ) {
     init {
         require(action in listOf("block", "allow")) {
