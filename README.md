@@ -27,3 +27,9 @@ Here you can copy the template without comments :)
   "logger": false
 }
 ```
+
+## Publication
+
+Actually, the mod is publicated in two mod providers
+- [X] https://www.curseforge.com/minecraft/mc-mods/clientblock
+- [ ] https://modrinth.com/mod/clientblock
