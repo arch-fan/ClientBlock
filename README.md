@@ -2,7 +2,9 @@
 
 A simple Fabric Mod for blocking/filtering Minecraft clients (JUST SERVER SIDE!).
 
-The config file (should be named `clientblock.json` inside your Fabric mods settings folder and comments removed)
+The configuration file is created automatically inside your Fabric Mods
+configurations folder. The file is named `clientblock.json` which has
+this structure:
 ```jsonc
 {
   "action": "block", // "block" or "allow" (block by default)
