@@ -1,6 +1,6 @@
-# BrandBlock
+# ClientBlock
 
-A simple Fabric Mod for blocking/filtering Minecraft clients (JUST SERVER SIDE!).
+A Fabric Mod for blocking/filtering Minecraft clients (JUST SERVER SIDE!).
 
 The configuration file is created automatically inside your Fabric Mods
 configurations folder. The file is named `clientblock.json` which has
