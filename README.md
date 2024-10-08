@@ -30,6 +30,6 @@ Here you can copy the template without comments :)
 
 ## Publication
 
-Actually, the mod is publicated in two mod providers
+Actually, the mod is published in two mod providers
 - [X] https://www.curseforge.com/minecraft/mc-mods/clientblock
 - [X] https://modrinth.com/mod/clientblock
