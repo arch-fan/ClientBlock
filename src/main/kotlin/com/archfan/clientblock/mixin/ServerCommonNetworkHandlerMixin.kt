@@ -8,7 +8,9 @@ import net.minecraft.network.packet.BrandCustomPayload
 
 import com.archfan.clientblock.ClientBlock.Companion.LOGGER
 import com.archfan.clientblock.ClientBlock.Companion.CONFIG
+import com.archfan.clientblock.ClientHandler
 import com.mojang.authlib.GameProfile
+import net.minecraft.network.DisconnectionInfo
 import net.minecraft.text.Text
 import org.spongepowered.asm.mixin.Shadow
 
@@ -24,6 +26,11 @@ abstract class ServerCommonNetworkHandlerMixin {
 
     @Shadow
     abstract fun disconnect(reason: Text)
+
+    @Inject(at = [At("HEAD")], method = ["onDisconnected"])
+    private fun onDisconnected(info: DisconnectionInfo, cb: CallbackInfo) {
+        ClientHandler.mapOfClients.remove(this.getProfile().name)
+    }
 
     @Inject(at = [At("HEAD")], method = ["onCustomPayload"], cancellable = true)
     private fun onCustomPayload(packet: CustomPayloadC2SPacket, info: CallbackInfo) {
@@ -49,6 +56,8 @@ abstract class ServerCommonNetworkHandlerMixin {
                 this.disconnect(Text.of(kickMessage))
                 LOGGER.info("Blocked $playerName using client $brand")
                 info.cancel()
+            } else {
+                ClientHandler.mapOfClients[playerName] = brand
             }
         }
     }
