@@ -2,6 +2,8 @@
 
 A Fabric Mod for blocking/filtering Minecraft clients (JUST SERVER SIDE!).
 
+## Configuration
+
 The configuration file is created automatically inside your Fabric Mods
 configurations folder. The file is named `clientblock.json` which has
 this structure:
@@ -27,6 +29,10 @@ Here you can copy the template without comments :)
   "logger": false
 }
 ```
+
+## Commands
+`/clients` for listing all clients.
+
 
 ## Publication
 
