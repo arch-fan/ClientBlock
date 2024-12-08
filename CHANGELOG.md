@@ -1,1 +1,1 @@
-- New automatic deployment on platforms
+- With version on namefile
