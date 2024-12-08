@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -25,10 +27,11 @@ jobs:
       - name: Build the mod
         run: ./gradlew build
 
-      - name: Upload release artifact
-        uses: softprops/action-gh-release@v2
+      - name: Release on platforms
+        uses: Kir-Antipov/mc-publish@v3.3
         with:
-          name: ${{ github.ref_name }}
-          body: |
-            Release of version ${{ github.ref_name }}
-          files: build/libs/*.jar
+          changelog-file: CHANGELOG.*
+
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
