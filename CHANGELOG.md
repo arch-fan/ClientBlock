@@ -1,1 +1,1 @@
-- With version on namefile
+- Re-design of the Mod Icon
