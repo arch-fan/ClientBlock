@@ -1,1 +1,1 @@
-- Re-design of the Mod Icon
+- Why do I even need an icon for A MINECRAFT SERVER SIDE MOD?
