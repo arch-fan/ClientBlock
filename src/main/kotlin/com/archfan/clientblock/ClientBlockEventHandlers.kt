@@ -2,12 +2,8 @@ package com.archfan.clientblock
 
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking
-import net.minecraft.network.PacketByteBuf
 import net.minecraft.network.packet.BrandCustomPayload
-import net.minecraft.network.packet.CustomPayload
-import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.text.Text
-import net.minecraft.util.Identifier
 
 object ClientBlockEventHandlers {
 
