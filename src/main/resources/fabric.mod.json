@@ -15,10 +15,6 @@
     "main": ["com.archfan.clientblock.ClientBlock"]
   },
 
-  "mixins": [
-    "clientblock.mixins.json"
-  ],
-
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric-language-kotlin": ">=${kotlin_loader_version}",

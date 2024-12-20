@@ -1,1 +1,1 @@
-- Updated dependencies fixed a bug which prevent booting the server.
+- Bye bye Mixins, hope we never meet again.

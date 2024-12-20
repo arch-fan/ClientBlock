@@ -21,6 +21,7 @@ class ClientBlock : ModInitializer {
 
     override fun onInitialize() {
         CommandRegistrationCallback.EVENT.register(CommandHandler::register)
+        ClientBlockEventHandlers.registerEvents()
 
         LOGGER.info("Mod Loaded. $CONFIG")
     }
