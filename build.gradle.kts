@@ -25,12 +25,12 @@ java {
 }
 
 loom {
-    splitEnvironmentSourceSets()
+    // splitEnvironmentSourceSets()
 
     mods {
         register("clientblock") {
             sourceSet("main")
-            sourceSet("client")
+            // sourceSet("client")
         }
     }
 }
