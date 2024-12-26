@@ -5,7 +5,6 @@ import net.minecraft.command.CommandRegistryAccess
 import net.minecraft.server.command.CommandManager.RegistrationEnvironment
 import net.minecraft.server.command.CommandManager.literal
 import net.minecraft.server.command.ServerCommandSource
-import net.minecraft.text.Text
 
 object CommandHandler {
     fun register(
