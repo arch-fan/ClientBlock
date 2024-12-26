@@ -26,5 +26,5 @@
     }
   },
   "required": ["action", "clients", "kickMessage", "logger"],
-  "additionalProperties": false
+  "additionalProperties": true
 }
