@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ClientBlock configuration schema",
+  "description": "Schema for the configuration file of the ClientBlock fabric mod.",
+  "type": "object",
+  "properties": {
+    "action": {
+      "description": "Type of action when filtering a client. Will affect to the client list.",
+      "type": "string",
+      "enum": ["block", "allow"]
+    },
+    "clients": {
+      "description": "Filtered clients list, will be blocked or allowed depending on the action.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "kickMessage": {
+      "description": "Message to show on his screen when a player is disconnected because a client block.",
+      "type": "string"
+    },
+    "logger": {
+      "description": "Whether to log the actions of the mod in the server console.",
+      "type": "boolean"
+    }
+  },
+  "required": ["action", "clients", "kickMessage", "logger"],
+  "additionalProperties": false
+}
