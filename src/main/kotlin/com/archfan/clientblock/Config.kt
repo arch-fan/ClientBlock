@@ -4,10 +4,15 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import java.io.File
 import com.archfan.clientblock.ClientBlock.Companion.LOGGER
+import kotlinx.serialization.Contextual
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.encodeToString
 
 @Serializable
 data class Config (
+    @SerialName("\$schema")
+    @Contextual
+    val schema: String = "https://raw.githubusercontent.com/arch-fan/ClientBlock/refs/heads/main/config.schema.json",
     val action: String = "block",
     val clients: List<String> = emptyList(),
     val kickMessage: String = "The client is not allowed!",
