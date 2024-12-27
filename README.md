@@ -9,6 +9,8 @@ configurations folder. The file is named `clientblock.json` which has
 this structure:
 ```jsonc
 {
+  // Json schema for having types in config
+  "$schema": "https://raw.githubusercontent.com/arch-fan/ClientBlock/refs/heads/main/config.schema.json",
   "action": "block", // "block" or "allow" (block by default)
   "clients": [
     "fabric"
@@ -21,6 +23,7 @@ this structure:
 Here you can copy the template without comments :)
 ```json
 {
+  "$schema": "https://raw.githubusercontent.com/arch-fan/ClientBlock/refs/heads/main/config.schema.json",
   "action": "block",
   "clients": [
     "fabric"
