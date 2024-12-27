@@ -15,7 +15,7 @@ data class Config (
     val logger: Boolean = false
 ) {
     @SerialName("\$schema")
-    val schema: String = "https://raw.githubusercontent.com/arch-fan/ClientBlock/refs/heads/main/config.schema.json"
+    var schema: String = "https://raw.githubusercontent.com/arch-fan/ClientBlock/refs/tags/v${getModVersion()}/config.schema.json"
 
     init {
         require(action in listOf("block", "allow")) {
@@ -29,7 +29,7 @@ data class Config (
             try {
                 if (file.exists()) {
                     val content = file.readText()
-                    return json.decodeFromString<Config>(content)
+                    return json.decodeFromString<Config>(content).also { it.updateVersion(file) }
                 } else {
                     return Config().also {
                         file.writeText(json.encodeToString(it))
@@ -42,7 +42,13 @@ data class Config (
         }
     }
 
-//    override fun toString(): String {
-//        return "Config(action='$action', clients=$clients, kickMessage='$kickMessage', logger=$logger)"
-//    }
+    fun updateVersion(file: File) {
+        val currentVersion = schema.substringAfterLast("refs/tags/v").substringBefore("/config.schema.json")
+        if (currentVersion != getModVersion()) {
+            val newSchema =
+                "https://raw.githubusercontent.com/arch-fan/ClientBlock/refs/tags/v${getModVersion()}/config.schema.json"
+            schema = newSchema
+            file.writeText(json.encodeToString(this))
+        }
+    }
 }
