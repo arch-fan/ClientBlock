@@ -1,1 +1,3 @@
-- Mixins come back...
+- Working from 1.21
+- Json schema available for configuration
+- Updated schema automatically between versions
