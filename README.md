@@ -16,7 +16,10 @@ this structure:
     "fabric"
   ], // Array of clients to block or allow (based in action mode) (empty by default)
   "kickMessage": "Custom kick message", // The client is not allowed! ("The client is not allowed!" by default)
-  "logger": false // Where to log every single person client entering at the server (false by default)
+  "logger": false, // Where to log every single person client entering at the server (false by default)
+  "whitelist": [
+    "PlayerOne"
+  ] // Array of players to bypass the client filter (empty by default)
 }
 ```
 
@@ -29,7 +32,10 @@ Here you can copy the template without comments :)
     "fabric"
   ],
   "kickMessage": "Custom kick message",
-  "logger": false
+  "logger": false,
+  "whitelist": [
+    "PlayerOne"
+  ]
 }
 ```
 

@@ -23,6 +23,13 @@
     "logger": {
       "description": "Whether to log the actions of the mod in the server console.",
       "type": "boolean"
+    },
+    "whitelist": {
+      "description": "Whitelist players from exclusion or allowance.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   },
   "required": ["action", "clients", "kickMessage", "logger"],

@@ -12,7 +12,8 @@ data class Config (
     val action: String = "block",
     val clients: List<String> = emptyList(),
     val kickMessage: String = "The client is not allowed!",
-    val logger: Boolean = false
+    val logger: Boolean = false,
+    val whitelist: List<String> = emptyList()
 ) {
     @SerialName("\$schema")
     var schema: String = "https://raw.githubusercontent.com/arch-fan/ClientBlock/refs/tags/v${getModVersion()}/config.schema.json"

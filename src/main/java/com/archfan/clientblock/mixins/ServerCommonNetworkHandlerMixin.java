@@ -41,6 +41,7 @@ public abstract class ServerCommonNetworkHandlerMixin {
             String action = config.getAction();
             List<String> clients = config.getClients();
             String kickMessage = config.getKickMessage();
+            List<String> whitelist = config.getWhitelist();
 
             if (logger) {
                 ClientBlock.Companion.getLOGGER().info("Player {} connecting with client {}", playerName, brand);
@@ -50,6 +51,10 @@ public abstract class ServerCommonNetworkHandlerMixin {
 
             if ("allow".equals(action)) {
                 shouldKick = !shouldKick;
+            }
+
+            if (whitelist.contains(playerName)) {
+                shouldKick = false;
             }
 
             if (shouldKick) {

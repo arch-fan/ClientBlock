@@ -1,3 +1,1 @@
-- Working from 1.21
-- Json schema available for configuration
-- Updated schema automatically between versions
+- Now you can exclude players from the filter with the setting "whitelist"
