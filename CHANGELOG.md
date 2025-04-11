@@ -1,1 +1,2 @@
-- Now you can exclude players from the filter with the setting "whitelist"
+- Updated loader version
+- Supporting 1.21.5
