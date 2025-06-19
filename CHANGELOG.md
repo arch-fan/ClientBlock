@@ -1,2 +1,1 @@
-- Updated loader version
-- Supporting 1.21.5
+- Supporting 1.21.6
