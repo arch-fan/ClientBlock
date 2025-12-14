@@ -1,1 +1,2 @@
-- Supporting 1.21.6
+- Supporting up to 1.21.11
+- Update Kotlin serialization and Fabric API
